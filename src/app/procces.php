@@ -15,7 +15,7 @@ $email=$_POST['email'];
 $phone=$_POST['phone'];
 $pass=sha1($_POST['passw']);
 
-
+//checks if first letter from initials and firstname are the same (though not everyone has the same initials because of there believe)
 function checkname()
 {
   $ini= mb_substr($_POST['initials'],0 ,1);
@@ -30,6 +30,7 @@ else{
     die;
 
 }}
+//checks for 10 numbered phone numbers and adds +31 while removing the "0"
 function convertphone()
 {
     global $phone;
@@ -50,7 +51,6 @@ function convertphone()
 
 checkname();
 convertphone();
-
 
 
 
