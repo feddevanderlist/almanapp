@@ -1,10 +1,5 @@
 <?php
-
-function redirect($url, $statusCode = 303)
-{
-    header('Location: ' . $url, true, $statusCode);
-
-}
+include_once 'functions.php';
 
 $initials=$_POST['initials'];
 $firstname=$_POST['first_name'];
@@ -15,41 +10,10 @@ $email=$_POST['email'];
 $phone=$_POST['phone'];
 $pass=sha1($_POST['passw']);
 
-//checks if first letter from initials and firstname are the same (though not everyone has the same initials because of there believe)
-function checkname()
-{
-  $ini= mb_substr($_POST['initials'],0 ,1);
-  $name=mb_substr($_POST['first_name'],0 ,1);
-  if($ini==$name){
-      echo "<br>succes";
 
-  }
-else{
-    echo "<br>check name and initials";
-
-    die;
-
-}}
-//checks for 10 numbered phone numbers and adds +31 while removing the "0"
-function convertphone()
-{
-    global $phone;
-    $nubmlength= strlen($_POST['phone']);
-    $phone=mb_substr($_POST['phone'],1,$nubmlength);
-    $phone="+31".$phone;
-
-    if ($nubmlength == 10){
-    echo "<br>correct phone number";
-    }
-    else{
-        echo "<br>please enter a proper phonenumber";
-        echo $nubmlength;
-        die;
-    }
-}
-
-
+echo noentry();//this one first because u want to break if there are empty fields
 checkname();
+//isduchtphone(); //not working yet
 convertphone();
 
 
@@ -76,4 +40,6 @@ catch(PDOException $e)
 }
 
 $conn = null;
+
+redirect('../result.php');
 ?>
