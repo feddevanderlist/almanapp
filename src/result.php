@@ -3,6 +3,7 @@
 
 
 <?php
+//connects to the database en gets all users
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -27,7 +28,8 @@ $dbname = "almanapp";
      <th>Email</th>
      <th>Phone Number</th>
    </tr>
-   <?php foreach( $results as $row ){
+
+   <?php foreach( $results as $row ){//puts all rows in a different table
     echo "<tr><td>";
     echo $row['id'];
     echo "</td><td>";
