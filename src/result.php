@@ -18,7 +18,7 @@ $dbname = "almanapp";
 <table class="table">
    <tr>
      <th>ID</th>
-     <th>Username</th>
+
      <th>initials</th>
      <th>First Name</th>
      <th>Last Name</th>
@@ -31,17 +31,15 @@ $dbname = "almanapp";
     echo "<tr><td>";
     echo $row['id'];
     echo "</td><td>";
-    echo $row['username'];
-    echo "</td><td>";
     echo $row['initials'];
     echo "</td><td>";
     echo $row['first_name'];
     echo "</td><td>";
     echo $row['last_name'];
     echo "</td><td>";
-    echo $row['postcode'];
+    echo $row['postal_code'];
     echo "</td><td>";
-    echo $row['homenumber'];
+    echo $row['home_number'];
     echo "</td><td>";
     echo $row['email'];
     echo "</td><td>";
