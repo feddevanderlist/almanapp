@@ -12,9 +12,9 @@ $pass=sha1($_POST['passw']);
 
 
 echo noentry();//this one first because u want to break if there are empty fields
-checkname();
-isduchtphone(); //not working yet
-convertphone();
+checkname();//checks if first letter and intials are the same
+isduchtphone(); //checks if the number contains a dutch area code
+convertphone();//converts the 0 into +31
 
 
 
