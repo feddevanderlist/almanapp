@@ -13,7 +13,7 @@ $pass=sha1($_POST['passw']);
 
 echo noentry();//this one first because u want to break if there are empty fields
 checkname();
-//isduchtphone(); //not working yet
+isduchtphone(); //not working yet
 convertphone();
 
 
